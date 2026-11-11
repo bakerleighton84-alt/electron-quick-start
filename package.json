@@ -1,7 +1,7 @@
 {
   "name": "name": "volt-launcher"
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "description": "VOLT Gaming Launcher"
   "main": "main.js",
   "scripts": {
     "start": "electron ."
