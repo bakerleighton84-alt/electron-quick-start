@@ -1,5 +1,5 @@
 {
-  "name": "minimal-repro",
+  "name": "volt launcher",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
