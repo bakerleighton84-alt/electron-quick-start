@@ -1,7 +1,12 @@
-/**
- * This file is loaded via the <script> tag in the index.html file and will
- * be executed in the renderer process for that window. No Node.js APIs are
- * available in this process because `nodeIntegration` is turned off and
- * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
- * to expose Node.js functionality from the main process.
- */
+
+const status = document.getElementById('status');
+
+const VOLT_OWNER = 'VOLT';
+
+document.addEventListener('DOMContentLoaded', () => {
+  status.textContent = `Welcome, ${VOLT_OWNER}. Launcher ready.`;
+});
+
+document.getElementById('launch').addEventListener('click', () => {
+  status.textContent = 'VOLT is ready. Game launching is not configured yet.';
+});
