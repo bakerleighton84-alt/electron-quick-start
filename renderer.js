@@ -1,12 +1,11 @@
 
+
 const status = document.getElementById('status');
 
-const VOLT_OWNER = 'VOLT';
+const info = window.volt.getInfo();
 
-document.addEventListener('DOMContentLoaded', () => {
-  status.textContent = `Welcome, ${VOLT_OWNER}. Launcher ready.`;
-});
+status.textContent = `Welcome to ${info.name} | Version ${info.version}`;
 
 document.getElementById('launch').addEventListener('click', () => {
-  status.textContent = 'VOLT is ready. Game launching is not configured yet.';
+  status.textContent = 'Game launching is not configured yet.';
 });
