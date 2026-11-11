@@ -1,19 +1,103 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <link href="./styles.css" rel="stylesheet">
+  <title>VOLT Launcher</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0b0b12;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 25px 40px;
+      background: #11111c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #a855f7;
+      letter-spacing: 5px;
+    }
+    .owner {
+      color: #c084fc;
+      border: 1px solid #9333ea;
+      padding: 9px 16px;
+      border-radius: 8px;
+    }
+    main {
+      padding: 70px 8%;
+    }
+    .hero {
+      background: linear-gradient(120deg,#241044,#11111c);
+      padding: 55px;
+      border-radius: 18px;
+    }
+    h1 { font-size: 48px; }
+    .subtitle { color: #aaa; }
+    button {
+      background: #9333ea;
+      color: white;
+      border: 0;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .section { margin-top: 40px; }
+    .panel {
+      background: #171725;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">VOLT</div>
+    <div class="owner">OWNER · VOLT</div>
+  </header>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+  <main>
+    <div class="hero">
+      <h1>Welcome to VOLT.</h1>
+      <p class="subtitle">Your gaming experience starts here.</p>
+      <button id="launch">LAUNCH GAME</button>
+      <p id="status">Ready to go.</p>
+    </div>
+
+    <div class="section">
+      <h2>Game Library</h2>
+      <div class="panel">
+        <h3>Fortnite 13.40</h3>
+        <p class="subtitle">Custom game profile</p>
+        <p>EU / NA</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Launcher Settings</h2>
+      <div class="panel">
+        <p>VOLT Launcher · Version 1.0</p>
+        <p>Account role: Owner (display only)</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="./renderer.js"></script>
+  <script>
+    document.getElementById('launch').addEventListener('click', () => {
+      document.getElementById('status').textContent =
+        'Game launch is not configured yet.';
+    });
+  </script>
+</body>
 </html>
